@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+body {
+    background: url("./assets/pexels-rakicevic-nenad-233369-744672.jpg");
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+:root {
+    --white: #e8e5f3;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    backdrop-filter: blur(0.1rem);
+}
+
+.nav-component {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-image{
+    max-height: 1rem;
+}
+
+.li {
+    display: flex;
+    padding-inline: 2rem;
+    font-family: "Montserrat", serif;
+    padding-block: 1rem;
+    color: var(--white);
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-li {
+    padding-inline-start: 1rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.li3 {
+    border: solid 0.1rem var(--white);
+    border-radius: 1rem;
+    padding-block: 0.5rem;
+    margin-block: 0.5rem;
+    margin-inline: 0.5rem;
+    cursor: pointer;
+    transition: scale 0.2s ease-in, background 0.2s ease-out, padding-top 0.5s ease, padding-bottom 0.5s ease;
+    font-weight: 600;
+}
+
+.li3:hover {
+    scale: 0.98;
+    transform: translateY(0.1rem);
+    background: var(--white);
+    color: #09021e;
+    cursor: pointer;
+    padding-top: 0.3rem;
+    padding-bottom: 0.7rem;
+}
+
+.li2 {
+    border-bottom: 0.2rem solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.li2:hover {
+    border-bottom: 3px solid var(--white);
+    transform: translateY(0.2rem);
+}
+
+.li1 {
+    cursor: pointer;
+}
+.hamburger{
+    display: none;
+}
+
+@media screen and (max-width: 778px) {
+    html{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 674px) {
+    .hamburger{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 1rem;
+        cursor:pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .hamburger:hover{
+        transform: rotate(10deg);
+    }
+
+    .navbar{
+        flex-direction: column;
+        backdrop-filter: blur(0);
+    }
+    .hide{
+        animation: go 0.7s forwards ease;
+    }
+    .unhide{
+        animation: come 0.7s backwards ease;
+    }
+    .ul{
+        backdrop-filter: blur(0.1rem);
+        z-index: -1;
+    }
+    .ul1{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@keyframes go {
+
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(-40rem);
+    }
+}
+@keyframes come {
+
+    from{
+        transform: translateY(-40rem);
+    }
+
+    to{
+        transform: translateY(0rem);
+    }
+}
